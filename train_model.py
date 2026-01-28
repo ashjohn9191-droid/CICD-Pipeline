@@ -148,17 +148,27 @@ plt.close()
 # =======================
 # Save Scores
 # =======================
-with open("scores.txt", "w") as f:
-    f.write(f"Random Forest Train Accuracy: {train_acc_rf:.2f}%\n")
-    f.write(f"Random Forest Test Accuracy: {test_acc_rf:.2f}%\n")
-    f.write(f"RF F1 Score: {f1_rf:.4f}\n")
-    f.write(f"RF Recall: {recall_rf:.4f}\n")
-    f.write(f"RF Precision: {prec_rf:.4f}\n\n")
+with open("report.md", "w") as f:
+    f.write("# Model Training Report\n\n")
 
-    f.write(f"Logistic Regression Train Accuracy: {train_acc_lr:.2f}%\n")
-    f.write(f"Logistic Regression Test Accuracy: {test_acc_lr:.2f}%\n")
-    f.write(f"LR F1 Score: {f1_lr:.4f}\n")
-    f.write(f"LR Recall: {recall_lr:.4f}\n")
-    f.write(f"LR Precision: {prec_lr:.4f}\n")
+    f.write("## Logistic Regression\n")
+    f.write(f"- Train Accuracy: {train_acc_lr:.2f}%\n")
+    f.write(f"- Test Accuracy: {test_acc_lr:.2f}%\n")
+    f.write(f"- F1 Score: {f1_lr:.4f}\n")
+    f.write(f"- Precision: {prec_lr:.4f}\n")
+    f.write(f"- Recall: {recall_lr:.4f}\n\n")
 
-print("Training complete. Files saved successfully.")
+    f.write("## Random Forest\n")
+    f.write(f"- Train Accuracy: {train_acc_rf:.2f}%\n")
+    f.write(f"- Test Accuracy: {test_acc_rf:.2f}%\n")
+    f.write(f"- F1 Score: {f1_rf:.4f}\n")
+    f.write(f"- Precision: {prec_rf:.4f}\n")
+    f.write(f"- Recall: {recall_rf:.4f}\n\n")
+
+    f.write("## Confusion Matrix\n")
+    f.write("![](ConfusionMatrix.png)\n\n")
+
+    f.write("## Feature Importance\n")
+    f.write("![](FeatureImportance.png)\n")
+
+
